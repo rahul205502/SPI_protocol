@@ -14,7 +14,7 @@ localparam [1:0] IDLE     = 0;
 localparam [1:0] TRANSFER = 1;
 localparam [1:0] DONE     = 2;
 
-reg [15:0] MOSI;
+reg        MOSI;
 reg [04:0] count;
 reg        cs;
 reg        sclk;
@@ -22,7 +22,7 @@ reg [01:0] state;
 
 always @ (posedge clk or negedge rst) begin
     if (~rst) begin
-        MOSI  <= 16'd0;
+        MOSI  <= 1'b0;
         count <= 05'd16;
         cs    <= 01'b1;
         sclk  <= 01'b0;
