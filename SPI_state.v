@@ -33,7 +33,7 @@ always @ (posedge clk or negedge rst) begin
         case (state)
             IDLE: begin
                 sclk  <= 1'b0;
-                cs    <= 1'b1;
+                cs    <= (count == 16);
                 state <= TRANSFER;
             end
             
